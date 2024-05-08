@@ -12,6 +12,7 @@
     using System.Threading.Tasks;
     using System.Windows.Forms;
 using DTO;
+using GUI.All_Tho_Control;
 
     namespace GUI.All_User_Control
     {
@@ -156,26 +157,10 @@ using DTO;
 
             private void lbllichsu_Click(object sender, EventArgs e)
             {
-            // Gọi phương thức để lấy danh sách các bài đăng của người dùng
-            List<BaiDangND> danhSachBaiDang = thongtinND.GetDanhSachBaiDang(LoginBLL.IDNguoiDung);
-
-            // Kiểm tra xem danh sách có bài đăng nào không
-            if (danhSachBaiDang != null && danhSachBaiDang.Count > 0)
-            {
-                // Hiển thị danh sách các bài đăng trong một cửa sổ hoặc điều khiển giao diện khác
-                // Ví dụ: bạn có thể sử dụng một DataGridView để hiển thị danh sách bài đăng
-                DataGridView dataGridView = new DataGridView();
-                dataGridView.DataSource = danhSachBaiDang;
-                // Thêm DataGridView vào một form mới hoặc một control giao diện khác để hiển thị
-                // Ví dụ: 
-                Form danhSachBaiDangForm = new Form();
-                danhSachBaiDangForm.Controls.Add(dataGridView);
-                danhSachBaiDangForm.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Không có bài đăng nào được tìm thấy.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            UC_DanhSachBaiDangND uC_DanhSachBaiDang1 = new UC_DanhSachBaiDangND(LoginBLL.IDNguoiDung);
+            this.Controls.Add(uC_DanhSachBaiDang1);
+            uC_DanhSachBaiDang1.Dock = DockStyle.Fill;
+            uC_DanhSachBaiDang1.BringToFront();
         }
         }
     }

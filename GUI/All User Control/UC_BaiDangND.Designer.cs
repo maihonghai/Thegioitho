@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_BaiDangND));
             this.pnThongTin = new Guna.UI2.WinForms.Guna2Panel();
             this.txtmota = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnXoaBaiDang = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnChiTiet = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,11 +50,13 @@
             this.pnThongTin.BorderRadius = 1;
             this.pnThongTin.BorderThickness = 3;
             this.pnThongTin.Controls.Add(this.txtmota);
+            this.pnThongTin.Controls.Add(this.btnXoaBaiDang);
             this.pnThongTin.Controls.Add(this.guna2HtmlLabel3);
             this.pnThongTin.Controls.Add(this.btnChiTiet);
             this.pnThongTin.Controls.Add(this.txtDiaChi);
             this.pnThongTin.Controls.Add(this.guna2HtmlLabel2);
             this.pnThongTin.Controls.Add(this.lblTieuDE);
+            this.pnThongTin.FillColor = System.Drawing.SystemColors.Control;
             this.pnThongTin.Location = new System.Drawing.Point(7, 3);
             this.pnThongTin.Name = "pnThongTin";
             this.pnThongTin.Size = new System.Drawing.Size(624, 252);
@@ -92,6 +95,31 @@
             this.txtmota.SelectedText = "";
             this.txtmota.Size = new System.Drawing.Size(254, 141);
             this.txtmota.TabIndex = 35;
+            // 
+            // btnXoaBaiDang
+            // 
+            this.btnXoaBaiDang.Animated = true;
+            this.btnXoaBaiDang.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnXoaBaiDang.BorderRadius = 17;
+            this.btnXoaBaiDang.BorderThickness = 1;
+            this.btnXoaBaiDang.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnXoaBaiDang.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnXoaBaiDang.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaBaiDang.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaBaiDang.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnXoaBaiDang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoaBaiDang.FillColor = System.Drawing.Color.White;
+            this.btnXoaBaiDang.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXoaBaiDang.ForeColor = System.Drawing.Color.Black;
+            this.btnXoaBaiDang.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnXoaBaiDang.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaBaiDang.Image")));
+            this.btnXoaBaiDang.Location = new System.Drawing.Point(17, 193);
+            this.btnXoaBaiDang.Name = "btnXoaBaiDang";
+            this.btnXoaBaiDang.Size = new System.Drawing.Size(311, 45);
+            this.btnXoaBaiDang.TabIndex = 37;
+            this.btnXoaBaiDang.Text = "Xóa Bài Đăng";
+            this.btnXoaBaiDang.Visible = false;
+            this.btnXoaBaiDang.Click += new System.EventHandler(this.btnXoaBaiDang_Click);
             // 
             // guna2HtmlLabel3
             // 
@@ -260,5 +288,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTieuDE;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI.WinForms.GunaContextMenuStrip gunaContextMenuStrip1;
+        private Guna.UI2.WinForms.Guna2Button btnXoaBaiDang;
     }
 }

@@ -79,6 +79,17 @@ namespace DTO
         public class BaiDangNDRepository
         {
             //private string connectionString = "Data Source=LAPTOP-QTEB4KQ5;Initial Catalog=TheGioiTho_BK;Integrated Security=True";
+            public void XoaBaiDang(int idBaiDang)
+            {
+                using (SqlConnection connection = ConnectionDTO.GetSqlConnection())
+                {
+                    connection.Open();
+                    string query = "DELETE FROM BaiDangND WHERE IDBaiDangND = @IDBaiDang";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@IDBaiDang", idBaiDang);
+                    command.ExecuteNonQuery();
+                }
+            }
             public List<BaiDangND> LayDanhSachBaiDangND()
             {
                 List<BaiDangND> danhSachBaiDang = new List<BaiDangND>();
@@ -117,6 +128,41 @@ namespace DTO
                     reader.Close();
                 }
 
+
+                return danhSachBaiDang;
+            }
+            public List<BaiDangND> LayBaiDangTheoIDNguoiDung(int idNguoiDung)
+            {
+                List<BaiDangND> danhSachBaiDang = new List<BaiDangND>();
+
+                using (SqlConnection connection = ConnectionDTO.GetSqlConnection())
+                {
+                    connection.Open();
+                    string query = "SELECT * FROM BaiDangND WHERE IDNguoiDung = @IDNguoiDung";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@IDNguoiDung", idNguoiDung);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        BaiDangND baiDang = new BaiDangND();
+                        baiDang.IDBaiDangND = Convert.ToInt32(reader["IDBaiDangND"]);
+                        baiDang.HoTen = reader["HoTen"].ToString();
+                        baiDang.DiaChi = reader["DiaChi"].ToString();
+                        baiDang.SoDienThoai = reader["SoDienThoai"].ToString();
+                        baiDang.LichThoDen = Convert.ToDateTime(reader["LichThoDen"]);
+                        baiDang.MoTa = reader["MoTa"].ToString();
+                        baiDang.CongViec = reader["CongViec"].ToString();
+                        baiDang.Gio = reader["Gio"].ToString();
+                        baiDang.TieuDe = reader["TieuDe"].ToString();
+                        baiDang.HinhAnhMoTa = (byte[])reader["HinhAnhMoTa"];
+                        baiDang.IDNguoiDung = Convert.ToInt32(reader["IDNguoiDung"]);
+
+                        danhSachBaiDang.Add(baiDang);
+                    }
+
+                    reader.Close();
+                }
 
                 return danhSachBaiDang;
             }

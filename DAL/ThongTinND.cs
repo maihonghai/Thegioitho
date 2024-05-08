@@ -45,35 +45,6 @@ namespace DAL
         }
         // Các thuộc tính và phương thức hiện có trong lớp
 
-        public List<BaiDangND> GetDanhSachBaiDang(int IdND)
-        {
-            List<BaiDangND> danhSachBaiDang = new List<BaiDangND>();
-
-            // Thực hiện truy vấn SQL để lấy danh sách bài đăng của người dùng từ cơ sở dữ liệu
-            SqlConnection connection = ConnectionDAL.GetSqlConnection();
-            string query = "SELECT * FROM BaiDangND WHERE IDNguoiDung = @IDNguoiDung";
-            using (connection)
-            {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@IDNguoiDung",IdND); // IDNguoiDung là thuộc tính IDNguoiDung của lớp
-
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    // Tạo một đối tượng BaiDangND từ kết quả truy vấn và thêm vào danh sách
-                    BaiDangND baiDang = new BaiDangND();
-                    baiDang.IDBaiDangND = Convert.ToInt32(reader["IDBaiDangND"]);
-                    // Gán các thuộc tính khác của bài đăng từ kết quả truy vấn
-                    danhSachBaiDang.Add(baiDang);
-                }
-
-                reader.Close();
-            }
-
-            return danhSachBaiDang;
-        }
         public ThongTinND(string tenTaiKhoan, string matKhau, string hoTen, string diaChi, string soDienThoai, string email)
         {
             TenTaiKhoan = tenTaiKhoan;

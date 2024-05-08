@@ -302,6 +302,12 @@
     <Compile Include="All User Control\UC_BaiDangND.Designer.cs">
       <DependentUpon>UC_BaiDangND.cs</DependentUpon>
     </Compile>
+    <Compile Include="All User Control\UC_DanhSachBaiDangND.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="All User Control\UC_DanhSachBaiDangND.Designer.cs">
+      <DependentUpon>UC_DanhSachBaiDangND.cs</DependentUpon>
+    </Compile>
     <Compile Include="All User Control\UC_DayUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -555,6 +561,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="All User Control\UC_DanhMuc.resx">
       <DependentUpon>UC_DanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="All User Control\UC_DanhSachBaiDangND.resx">
+      <DependentUpon>UC_DanhSachBaiDangND.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="All User Control\UC_DayUser.resx">
       <DependentUpon>UC_DayUser.cs</DependentUpon>

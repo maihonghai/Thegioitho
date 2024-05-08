@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DanhSachBaiDang));
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.ptbBack = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlDanhSachIDTho = new Guna.UI2.WinForms.Guna2Panel();
+            this.ptbBack = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbBack)).BeginInit();
             this.SuspendLayout();
@@ -46,19 +46,6 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1135, 71);
             this.guna2GradientPanel1.TabIndex = 4;
-            // 
-            // ptbBack
-            // 
-            this.ptbBack.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ptbBack.Image = ((System.Drawing.Image)(resources.GetObject("ptbBack.Image")));
-            this.ptbBack.ImageRotate = 0F;
-            this.ptbBack.Location = new System.Drawing.Point(8, 26);
-            this.ptbBack.Name = "ptbBack";
-            this.ptbBack.Size = new System.Drawing.Size(25, 25);
-            this.ptbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbBack.TabIndex = 1;
-            this.ptbBack.TabStop = false;
-            this.ptbBack.Click += new System.EventHandler(this.ptbBack_Click);
             // 
             // guna2HtmlLabel1
             // 
@@ -80,6 +67,19 @@
             this.pnlDanhSachIDTho.Name = "pnlDanhSachIDTho";
             this.pnlDanhSachIDTho.Size = new System.Drawing.Size(1037, 451);
             this.pnlDanhSachIDTho.TabIndex = 6;
+            // 
+            // ptbBack
+            // 
+            this.ptbBack.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ptbBack.Image = ((System.Drawing.Image)(resources.GetObject("ptbBack.Image")));
+            this.ptbBack.ImageRotate = 0F;
+            this.ptbBack.Location = new System.Drawing.Point(8, 26);
+            this.ptbBack.Name = "ptbBack";
+            this.ptbBack.Size = new System.Drawing.Size(25, 25);
+            this.ptbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbBack.TabIndex = 1;
+            this.ptbBack.TabStop = false;
+            this.ptbBack.Click += new System.EventHandler(this.ptbBack_Click);
             // 
             // UC_DanhSachBaiDang
             // 

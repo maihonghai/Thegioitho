@@ -16,7 +16,7 @@ namespace GUI.All_Tho_Control
 {
     public partial class UC_DanhSachBaiDang : UserControl
     {
-        private UC_BaiDang uC_BaiDang1;
+        //private UC_BaiDang uC_BaiDang1;
         private BaiDangRepository baiDangRepository;
 
         public int IDTho;
